@@ -13,7 +13,7 @@ using System.Diagnostics;
 
 // 1-14-20 based on https://www.youtube.com/watch?v=vTWV1x1lg6Q
 // 1-14-20 added to local GIT repository;  still testing
-
+// 1-15-20 connected to git and github
 namespace SeleniumDemo2
 {
     [TestClass]
@@ -23,7 +23,7 @@ namespace SeleniumDemo2
         public void SearchForCheese()
         {
             var chromeOptions = new ChromeOptions();
-            chromeOptions.AddArguments("--headless");  // Need this  - comment it out to turn headless off.
+            // chromeOptions.AddArguments("--headless");  // Need this  - comment it out to turn headless off.
             // https://sqa.stackexchange.com/questions/33778/chromedriver-in-headless-mode-doesnt-work-correctly-because-of-windows-user-pol 
             // chromeOptions.AddArguments("--window-size=1920,1080");
             chromeOptions.AddArguments("--disable-gpu"); // Need this
