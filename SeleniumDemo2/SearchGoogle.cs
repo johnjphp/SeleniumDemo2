@@ -12,7 +12,7 @@ using System.Diagnostics;
 // using OpenQA.Selenium.Support.UI;
 
 // 1-14-20 based on https://www.youtube.com/watch?v=vTWV1x1lg6Q
-// 1-14-20 added to local GIT repository; 
+// 1-14-20 added to local GIT repository;  still testing
 
 namespace SeleniumDemo2
 {
