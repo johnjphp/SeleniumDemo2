@@ -11,9 +11,11 @@ using System;
 using System.Diagnostics;
 // using OpenQA.Selenium.Support.UI;
 
+// 1-17-20 Headless condition added
+// 1-15-20 connected to git and github
 // 1-14-20 based on https://www.youtube.com/watch?v=vTWV1x1lg6Q
 // 1-14-20 added to local GIT repository;  still testing
-// 1-15-20 connected to git and github
+
 namespace SeleniumDemo2
 {
     [TestClass]
@@ -23,7 +25,8 @@ namespace SeleniumDemo2
         public void SearchForCheese()
         {
             var chromeOptions = new ChromeOptions();
-            // chromeOptions.AddArguments("--headless");  // Need this  - comment it out to turn headless off.
+            bool headlessA = false;
+            //chromeOptions.AddArguments("--headless");  // Need this  - comment it out to turn headless off.
             // https://sqa.stackexchange.com/questions/33778/chromedriver-in-headless-mode-doesnt-work-correctly-because-of-windows-user-pol 
             // chromeOptions.AddArguments("--window-size=1920,1080");
             chromeOptions.AddArguments("--disable-gpu"); // Need this
@@ -33,7 +36,6 @@ namespace SeleniumDemo2
             chromeOptions.AddArguments("--proxy-bypass-list=*"); // Need this
             //chromeOptions.AddArguments("--start-maximized");
            
-
             using (var driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), chromeOptions))
 
             {
@@ -49,6 +51,12 @@ namespace SeleniumDemo2
                 //wait.Until(d => d.Title.StartsWith, ("cheese", StringComparison.OrdinalIgnoreCase));
 
                 Assert.AreEqual(driver.Title, "Cheese - Google Search");
+
+                if (headlessA) {
+                    Console.WriteLine("With headless option. ");
+                }
+                else
+                    Console.WriteLine("Without headless option. ");
 
             }
         }
